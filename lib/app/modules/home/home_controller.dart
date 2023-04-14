@@ -119,7 +119,11 @@ class HomeController extends DefaultChangeNotifier {
     selectedDate = date;
 
     filteredTasks = allTasks.where((task) {
-      return task.dateTime == selectedDate;
+      if (!showFinishedTasks) {
+        return task.dateTime == selectedDate && !task.finished;
+      } else {
+        return task.dateTime == selectedDate;
+      }
     }).toList();
     notifyListeners();
   }

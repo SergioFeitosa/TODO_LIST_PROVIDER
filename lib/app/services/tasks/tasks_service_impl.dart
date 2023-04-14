@@ -1,6 +1,7 @@
 // ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'package:todo_list_provider/app/models/task_model.dart';
 import 'package:todo_list_provider/app/models/week_tasks_model.dart';
+import 'package:todo_list_provider/app/modules/home/widgets/task.dart';
 import 'package:todo_list_provider/app/repositories/tasks/tasks_repository.dart';
 
 import './tasks_service.dart';
@@ -11,6 +12,8 @@ class TasksServiceImpl implements TasksService {
   TasksServiceImpl({
     required TasksRepository tasksRepository,
   }) : _tasksRepository = tasksRepository;
+
+  bool showFinishedTasks = false;
 
   @override
   Future<void> save(DateTime date, String description, String userId) =>
@@ -41,7 +44,7 @@ class TasksServiceImpl implements TasksService {
 
     endFilter = startFilter.add(const Duration(days: 7));
 
-    final tasks =
+    var tasks =
         await _tasksRepository.findByPeriod(startFilter, endFilter, userId);
 
     return WeekTasksModel(

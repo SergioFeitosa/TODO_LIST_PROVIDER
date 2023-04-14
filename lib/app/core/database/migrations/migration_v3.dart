@@ -8,6 +8,7 @@ class MigrationV3 implements Migration {
       create table teste3(
         id Integer primary key autoincrement,
         descricao varchar(500) not null,
+        userId varchar(500) not null,
         data_hora datetime,
         finalizado integer
       )

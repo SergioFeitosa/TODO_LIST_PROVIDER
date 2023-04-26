@@ -27,7 +27,8 @@ class UserRepositoryImpl implements UserRepository {
               message: 'E-mail já utilizado, por favor escolha outro e-mail');
         } else {
           throw AuthException(
-              message: '''Você se cadastrou no TodoList pelo Google, 
+              message:
+                  '''Você se cadastrou no TodoList pelo Google, 
                   por favor utilize ele para entrar!!!''');
         }
       } else {
@@ -45,12 +46,12 @@ class UserRepositoryImpl implements UserRepository {
       );
       return userCredential.user;
     } on PlatformException catch (e, s) {
-      print(e);
-      print(s);
+      e.toString();
+      s.toString();
       throw AuthException(message: e.message ?? 'Erro ao realizar login');
     } on FirebaseAuthException catch (e, s) {
-      print(e);
-      print(s);
+      e.toString();
+      s.toString();
       if (e.code == 'wrong-password') {
         throw AuthException(message: 'Email ou Senha inválidos');
       }
@@ -76,8 +77,8 @@ class UserRepositoryImpl implements UserRepository {
         );
       }
     } on PlatformException catch (e, s) {
-      print(e.message);
-      print(s);
+      e.toString();
+      s.toString();
       throw AuthException(message: 'Erro na recuperação de senha');
     }
   }
@@ -110,10 +111,12 @@ class UserRepositoryImpl implements UserRepository {
         }
       }
     } on FirebaseAuthException catch (e, s) {
-      print(e);
-      print(s);
+      e.toString();
+      s.toString();
       if (e.code == 'account-exists-with-different-credential') {
-        throw AuthException(message: '''
+        throw AuthException(
+            message:
+                '''
           Login inválido. Você se registrou no TodoList com os seguintes provedores:
           ${loginMethods?.join(',')}
           ''');

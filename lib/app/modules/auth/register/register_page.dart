@@ -43,7 +43,7 @@ class _RegisterPageState extends State<RegisterPage> {
         //Navigator.of(context).pop();
       },
       errorCallback: (notifier, listenerInstance) {
-        print('DEU RUIM');
+        //print('DEU RUIM');
       },
     );
 

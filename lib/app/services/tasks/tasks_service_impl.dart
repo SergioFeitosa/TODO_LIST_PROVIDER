@@ -1,7 +1,6 @@
 // ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'package:todo_list_provider/app/models/task_model.dart';
 import 'package:todo_list_provider/app/models/week_tasks_model.dart';
-import 'package:todo_list_provider/app/modules/home/widgets/task.dart';
 import 'package:todo_list_provider/app/repositories/tasks/tasks_repository.dart';
 
 import './tasks_service.dart';

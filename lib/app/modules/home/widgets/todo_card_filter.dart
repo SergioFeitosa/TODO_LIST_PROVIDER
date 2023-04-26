@@ -33,7 +33,7 @@ class TodoCardFilter extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    var quantidadeTask;
+    String quantidadeTask;
 
     switch (totalTaskModel?.totalTasks) {
       case 0:
@@ -80,7 +80,9 @@ class TodoCardFilter extends StatelessWidget {
               style: TextStyle(
                 fontSize: 20,
                 fontWeight: FontWeight.bold,
-                color: selected ? Colors.white : Colors.black,
+                color: selected
+                    ? Colors.white
+                    : const Color.fromRGBO(255, 105, 180, 1),
               ),
             ),
             TweenAnimationBuilder<double>(

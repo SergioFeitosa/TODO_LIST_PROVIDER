@@ -37,15 +37,22 @@ class TodoListField extends StatelessWidget {
             labelText: label,
             labelStyle: const TextStyle(
               fontSize: 15,
-              color: Colors.black,
+              color: Color.fromRGBO(255, 105, 180, 1),
             ),
-            border: OutlineInputBorder(
+            enabledBorder: OutlineInputBorder(
               borderRadius: BorderRadius.circular(30),
-              borderSide: const BorderSide(color: Colors.blue),
+              borderSide: const BorderSide(
+                color: Color.fromRGBO(255, 105, 180, 1),
+              ),
             ),
             errorBorder: OutlineInputBorder(
               borderRadius: BorderRadius.circular(30),
               borderSide: const BorderSide(color: Colors.red),
+            ),
+            focusedBorder: const UnderlineInputBorder(
+              borderSide: BorderSide(
+                color: Color.fromRGBO(255, 105, 180, 1),
+              ),
             ),
             isDense: true,
             suffixIcon: suffixIconButton ??
@@ -59,6 +66,7 @@ class TodoListField extends StatelessWidget {
                               ? TodoListIcons.eyeSlash
                               : TodoListIcons.eye,
                           size: 15,
+                          color: const Color.fromRGBO(255, 105, 180, 1),
                         ),
                       )
                     : null),

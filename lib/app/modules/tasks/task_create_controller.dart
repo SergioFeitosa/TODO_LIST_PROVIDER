@@ -32,9 +32,9 @@ class TaskCreateController extends DefaultChangeNotifier {
       } else {
         setError('Data da task não selecionada');
       }
-    } catch (e, s) {
-      print(e);
-      print(s);
+    } catch (e) {
+      e.toString();
+      //print(s);
       setError('Erro ao cadastrar Task');
     } finally {
       hideLoading();

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../../core/widget/todo_list_logo.dart';
+//import '../../core/widget/todo_list_logo.dart';
 
 class SplashPage extends StatelessWidget {
   const SplashPage({Key? key}) : super(key: key);
@@ -9,8 +9,8 @@ class SplashPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return const Scaffold(
       body: Center(
-        child: TodoListLogo(),
-      ),
+//        child: TodoListLogo(),
+          ),
     );
   }
 }

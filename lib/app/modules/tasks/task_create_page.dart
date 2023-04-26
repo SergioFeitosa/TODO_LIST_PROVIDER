@@ -85,7 +85,7 @@ class _TaskCreatePageState extends State<TaskCreatePage> {
                   'Criar Atividade',
                   style: context.titleStyle.copyWith(
                     fontSize: 20,
-                    color: Colors.black,
+                    color: const Color.fromRGBO(255, 105, 180, 1),
                     fontWeight: FontWeight.bold,
                   ),
                 ),

@@ -24,7 +24,25 @@ class CalendarButton extends StatelessWidget {
           initialDate: DateTime.now(),
           firstDate: firstDate,
           lastDate: lastDate,
+          builder: (context, child) {
+            return Theme(
+              data: Theme.of(context).copyWith(
+                colorScheme: const ColorScheme.light(
+                  primary: Color.fromRGBO(255, 105, 180, 1.0), // <-- SEE HERE
+                  onPrimary: Colors.white, // <-- SEE HERE
+                  onSurface: Colors.black54, // <-- SEE HERE
+                ),
+                textButtonTheme: TextButtonThemeData(
+                  style: TextButton.styleFrom(
+                    foregroundColor: Colors.red, // button text color
+                  ),
+                ),
+              ),
+              child: child!,
+            );
+          },
         );
+        // ignore: use_build_context_synchronously
         context.read<TaskCreateController>().selectedDate = selectedDate;
       },
       borderRadius: BorderRadius.circular(30),
@@ -32,7 +50,7 @@ class CalendarButton extends StatelessWidget {
         padding: const EdgeInsets.all(10),
         decoration: BoxDecoration(
           border: Border.all(
-            color: Colors.grey,
+            color: const Color.fromRGBO(255, 105, 180, 1),
           ),
           borderRadius: BorderRadius.circular(30),
         ),
@@ -41,7 +59,7 @@ class CalendarButton extends StatelessWidget {
           children: [
             const Icon(
               Icons.today,
-              color: Colors.grey,
+              color: Color.fromRGBO(255, 105, 180, 1),
             ),
             const SizedBox(
               width: 10,
